@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <title>Bkzh</title>
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+    <script>
+        $(document).ready(function() {
+            $("#animateBtn").click(function() {
+                $("#box").animate({
+                    left: '250px',
+                    opacity: '0.5',
+                    height: '150px',
+                    width: '150px'
+                }, 2000);
+            });
+
+            $("#getBtn").click(function() {
+                $.get("example.php", function(data) {
+                    $("#result").html(data);
+                });
+            });
+
+            $("#postBtn").click(function() {
+                $.post("example.php", {
+                    name: "AADASDSDAS",
+                    age: 327
+                }, function(data) {
+                    $("#result").html(data);
+                });
+            });
+        });
+    </script>
+</head>
+
+<body>
+
+    <div id="box" style="background-color: #641c4f; width: 150px; height: 150px; position: absolute; margin-top:100px ;"></div>
+    <button id="animateBtn">Animation</button>
+    <div id="result"></div>
+
+</body>
+
+</html>
